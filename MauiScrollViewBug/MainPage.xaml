@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiScrollViewBug.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="IconTemplate">
+            <StackLayout
+                Margin="0"
+                Spacing="10"
+                WidthRequest="120">
+                <Border
+                    Padding="0"
+                    BackgroundColor="White"
+                    HorizontalOptions="CenterAndExpand"
+                    StrokeShape="RoundRectangle 10,10,10,10">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="Gray"
+                            Opacity="0.1"
+                            Radius="3"
+                            Offset="0,2" />
+                    </Border.Shadow>
+                    <Image
+                        Margin="15"
+                        HeightRequest="35"
+                        HorizontalOptions="Center"
+                        Source="{Binding IconName}"
+                        VerticalOptions="Center"
+                        WidthRequest="35" />
+                </Border>
+                <Label
+                    Margin="15,0,15,0"
+                    HorizontalOptions="Center"
+                    LineBreakMode="WordWrap"
+                    MaxLines="2"
+                    Text="{Binding Title}"
+                    VerticalOptions="Center" />
+            </StackLayout>
+        </DataTemplate>
+        <Style TargetType="CollectionView">
+            <Setter Property="ItemTemplate" Value="{StaticResource IconTemplate}" />
+        </Style>
+    </ContentPage.Resources>
+    <Grid
+        HorizontalOptions="FillAndExpand"
+        RowDefinitions="80,Auto"
+        VerticalOptions="FillAndExpand">
+        <Label Grid.Row="0" Text="This is laber row 0" />
+        <ScrollView
+            Grid.Row="1"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <VerticalStackLayout
+                HorizontalOptions="FillAndExpand"
+                Spacing="25"
+                VerticalOptions="FillAndExpand">
+
+                <Label Grid.Row="0" Text="CarouselView 1" />
+                <CarouselView
+                    HeightRequest="130"
+                    HorizontalScrollBarVisibility="Never"
+                    IndicatorView="indicatorFavourite"
+                    IsBounceEnabled="False"
+                    ItemsSource="{Binding MenuItems, Mode=OneWay}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout
+                            Orientation="Horizontal"
+                            SnapPointsAlignment="Center"
+                            SnapPointsType="Mandatory" />
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <CollectionView
+                                HorizontalScrollBarVisibility="Always"
+                                ItemsLayout="HorizontalList"
+                                ItemsSource="{Binding SubItems}"
+                                VerticalScrollBarVisibility="Never" />
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView x:Name="indicatorFavourite" Margin="0,5" />
+
+                <Label Grid.Row="0" Text="CarouselView 2" />
+                <CarouselView
+                    HeightRequest="130"
+                    HorizontalScrollBarVisibility="Never"
+                    IndicatorView="indicator2"
+                    IsBounceEnabled="False"
+                    ItemsSource="{Binding MenuItems, Mode=OneWay}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout
+                            Orientation="Horizontal"
+                            SnapPointsAlignment="Center"
+                            SnapPointsType="Mandatory" />
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <CollectionView
+                                HorizontalScrollBarVisibility="Always"
+                                ItemsLayout="HorizontalList"
+                                ItemsSource="{Binding SubItems}"
+                                VerticalScrollBarVisibility="Never" />
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView x:Name="indicator2" Margin="0,5" />
+
+                <Label Grid.Row="0" Text="CarouselView 3" />
+                <CarouselView
+                    HeightRequest="130"
+                    HorizontalScrollBarVisibility="Never"
+                    IndicatorView="indicator3"
+                    IsBounceEnabled="False"
+                    ItemsSource="{Binding MenuItems, Mode=OneWay}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout
+                            Orientation="Horizontal"
+                            SnapPointsAlignment="Center"
+                            SnapPointsType="Mandatory" />
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <CollectionView
+                                HorizontalScrollBarVisibility="Always"
+                                ItemsLayout="HorizontalList"
+                                ItemsSource="{Binding SubItems}"
+                                VerticalScrollBarVisibility="Never" />
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView x:Name="indicator3" Margin="0,5" />
+
+                <Label Grid.Row="0" Text="CarouselView 4" />
+                <CarouselView
+                    HeightRequest="130"
+                    HorizontalScrollBarVisibility="Never"
+                    IndicatorView="indicator4"
+                    IsBounceEnabled="False"
+                    ItemsSource="{Binding MenuItems, Mode=OneWay}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout
+                            Orientation="Horizontal"
+                            SnapPointsAlignment="Center"
+                            SnapPointsType="Mandatory" />
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <CollectionView
+                                HorizontalScrollBarVisibility="Always"
+                                ItemsLayout="HorizontalList"
+                                ItemsSource="{Binding SubItems}"
+                                VerticalScrollBarVisibility="Never" />
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView x:Name="indicator4" Margin="0,5" />
+
+                <Label Grid.Row="0" Text="CarouselView 5" />
+                <CarouselView
+                    HeightRequest="130"
+                    HorizontalScrollBarVisibility="Never"
+                    IndicatorView="indicator5"
+                    IsBounceEnabled="False"
+                    ItemsSource="{Binding MenuItems, Mode=OneWay}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout
+                            Orientation="Horizontal"
+                            SnapPointsAlignment="Center"
+                            SnapPointsType="Mandatory" />
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <CollectionView
+                                HorizontalScrollBarVisibility="Always"
+                                ItemsLayout="HorizontalList"
+                                ItemsSource="{Binding SubItems}"
+                                VerticalScrollBarVisibility="Never" />
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView x:Name="indicator5" Margin="0,5" />
+
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+
+</ContentPage>
