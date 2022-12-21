@@ -51,7 +51,7 @@
             Grid.Row="1"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand">
-            <StackLayout
+            <VerticalStackLayout
                 HorizontalOptions="FillAndExpand"
                 Spacing="25"
                 VerticalOptions="FillAndExpand">
@@ -182,7 +182,7 @@
                 <IndicatorView x:Name="indicator5" Margin="0,5" />
 
 
-            </StackLayout>
+            </VerticalStackLayout>
         </ScrollView>
     </Grid>
 
